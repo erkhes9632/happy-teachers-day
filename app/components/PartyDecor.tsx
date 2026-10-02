@@ -168,10 +168,17 @@ export default function PartyDecor() {
       aria-hidden
       className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
     >
+      {/* нарны гэрэл */}
+      <div className="absolute -top-24 right-[8%] size-80 rounded-full bg-[radial-gradient(circle,#fff6c9,transparent_65%)]" />
       <Cloud className="top-[18%] -left-10" w={220} delay={0} />
       <Cloud className="top-[34%] right-[6%]" w={170} delay={-12} />
       <Cloud className="top-[58%] left-[22%]" w={140} delay={-24} />
       <Cloud className="top-[12%] right-[28%]" w={120} delay={-6} />
+      <Cloud className="top-[8%] left-[30%]" w={160} delay={-18} />
+      <Cloud className="top-[44%] -right-12" w={260} delay={-9} />
+      <Cloud className="bottom-[10%] -left-16" w={340} delay={-15} />
+      <Cloud className="bottom-[7%] left-[30%]" w={300} delay={-3} />
+      <Cloud className="bottom-[9%] right-[8%]" w={360} delay={-21} />
       {balloons.map((b) => (
         <Balloon key={b.pos} {...b} />
       ))}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Cake from "../components/Cake";
 import ConfettiButton from "../components/ConfettiButton";
+import FallingLayer from "../components/FallingLayer";
 import LetterPaper from "../components/LetterPaper";
 import PartyDecor from "../components/PartyDecor";
 import PhotoWall from "../components/PhotoWall";
@@ -33,6 +34,7 @@ export default function LettersPage() {
       {/* 1. Баярын тэнгэр: торт, мэндчилгээ */}
       <section className="sky relative flex min-h-screen flex-col items-center justify-center px-4 pt-32 pb-36 text-center">
         <PartyDecor />
+        <FallingLayer variant="snow" count={60} />
 
         <Link
           href="/"
@@ -80,17 +82,30 @@ export default function LettersPage() {
 
       {/* 2. Kraft цаасан scrapbook: ангийн зургууд */}
       <section className="kraft relative px-4 pt-20 pb-44 sm:px-8">
+        <FallingLayer variant="gold" count={44} />
         <PhotoWall />
         <Wave fill="#f6dde2" />
       </section>
 
       {/* 3. Сарнай өнгийн ширээн дээрх захидал */}
       <section className="rose-desk relative px-4 pt-20 pb-28 sm:px-8">
-        <Reveal>
-          <LetterPaper />
-        </Reveal>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-[12%] -left-24 size-96 rounded-full bg-white/40 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute right-[-6rem] bottom-[18%] size-96 rounded-full bg-pink-300/40 blur-3xl"
+        />
+        <FallingLayer variant="petals" count={40} />
 
-        <footer className="mt-20 text-center">
+        <div className="relative z-10">
+          <Reveal>
+            <LetterPaper />
+          </Reveal>
+        </div>
+
+        <footer className="relative z-10 mt-20 text-center">
           <p className="font-hand text-4xl text-rose-800">
             Баярын мэнд, багшаа!
           </p>

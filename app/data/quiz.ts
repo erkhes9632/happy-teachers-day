@@ -6,10 +6,10 @@ export type Teacher = { id: string; name: string };
    Зөв хариулт (ангийн багш) нь site.ts доторх teacherName-ээс автоматаар авна.
    Дарааллыг хүссэнээрээ солиж болно. */
 const teachers: Teacher[] = [
-  { id: "t-1", name: "Болормаа" },
+  { id: "t-1", name: "Нурзат" },
   { id: "class-teacher", name: site.teacherName },
-  { id: "t-3", name: "Ганбаатар" },
-  { id: "t-4", name: "Номин-Эрдэнэ" },
+  { id: "t-3", name: "Жавжандолгор" },
+  { id: "t-4", name: "Наранцацралт" },
 ];
 
 export const quiz = {
@@ -27,6 +27,6 @@ export const quiz = {
   wrongLines: [
     "Аан, энэ биш ээ 🙈",
     "Дахиад нэг оролдоод үзээрэй 💪",
-    "Бараг л боллоо, чамд итгэж байна 💛",
+    "Бараг л боллоо, танд итгэж байна 💛",
   ],
 };

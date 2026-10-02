@@ -369,3 +369,39 @@ body::before {
     display: none;
   }
 }
+
+/* =====================================================
+   Цас, алтан тоос, дэлбээ: хуудасны хэсэг бүрт өөр
+   ===================================================== */
+@keyframes kf-fall {
+  from {
+    transform: translate3d(0, -8vh, 0);
+  }
+  to {
+    transform: translate3d(0, 108vh, 0);
+  }
+}
+@keyframes kf-sway {
+  from {
+    transform: translateX(calc(var(--amp, 18px) * -1));
+  }
+  to {
+    transform: translateX(var(--amp, 18px));
+  }
+}
+.fall {
+  animation: kf-fall linear infinite;
+  will-change: transform;
+}
+.sway {
+  animation: kf-sway ease-in-out infinite alternate;
+}
+.tumble {
+  animation: kf-spin linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fall-layer {
+    display: none;
+  }
+}
