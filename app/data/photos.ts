@@ -31,7 +31,7 @@ export const photos: Photo[] = [
   { src: "/class/14.jpg", caption: "Мөр зориг нэгтэй", frame: "mat" },
   {
     src: "/class/15.jpg",
-    caption: "Сургуулийн коридорын дурсамж",
+    caption: "Нэгэн замаар, хамтдаа",
     frame: "film",
   },
   {
