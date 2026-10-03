@@ -7,6 +7,7 @@ import LetterPaper from "../components/LetterPaper";
 import PartyDecor from "../components/PartyDecor";
 import PhotoWall from "../components/PhotoWall";
 import Reveal from "../components/Reveal";
+import AutoScroll from "../components/AutoScroll";
 
 export const metadata: Metadata = {
   title: "Багш танд зориулав 💌",
@@ -31,6 +32,7 @@ function Wave({ fill }: { fill: string }) {
 export default function LettersPage() {
   return (
     <main className="overflow-x-clip">
+      <AutoScroll />
       <section className="sky relative flex min-h-screen flex-col items-center justify-center px-4 pt-32 pb-36 text-center">
         <PartyDecor />
         <FallingLayer variant="snow" count={60} />
