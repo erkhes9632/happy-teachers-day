@@ -118,6 +118,17 @@ export default function LettersPage() {
             </Link>
           </div>
         </footer>
+
+        <div className="mt-16 flex flex-col items-center justify-center gap-1">
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-rose-300 to-transparent mb-3" />
+          <p className="font-hand text-xl text-rose-800/80">
+            2026.10.05 — 12Б ангийн хамт олноос
+          </p>
+          <p className="text-xs text-rose-700/50 font-sans tracking-widest uppercase">
+            Designed & Developed by{" "}
+            <span className="font-semibold text-rose-900">Erkhes</span>
+          </p>
+        </div>
       </section>
     </main>
   );
