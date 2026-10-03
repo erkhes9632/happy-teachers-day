@@ -1,4 +1,3 @@
-// Зөв хариулт дээр дэлбэрэх зүрх, одод (ямар ч сан хэрэггүй).
 type Origin = { x: number; y: number };
 
 const COLORS = ["#ff4d8d", "#ff7aa8", "#ff2d6f", "#ffb3c9", "#ffc857"];
@@ -63,14 +62,12 @@ export function fireHearts(origin?: Origin, duration = 3600) {
       ctx.fillStyle = p.color;
       ctx.beginPath();
       if (p.spark) {
-        // 4 хошуутай од
         ctx.moveTo(0, -s);
         ctx.quadraticCurveTo(0, 0, s, 0);
         ctx.quadraticCurveTo(0, 0, 0, s);
         ctx.quadraticCurveTo(0, 0, -s, 0);
         ctx.quadraticCurveTo(0, 0, 0, -s);
       } else {
-        // зүрх
         ctx.moveTo(0, s * 0.45);
         ctx.bezierCurveTo(
           -s * 1.1,

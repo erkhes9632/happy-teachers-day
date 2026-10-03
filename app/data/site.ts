@@ -1,8 +1,7 @@
-// Сайтын үндсэн текстүүдийг эндээс засна.
 export const site = {
   teacherName: "Жавхлантуяа",
   teacherTitle: "багш",
-  photo: "/teacher.jpg", // public/teacher.jpg  (public хавтас "/" гэж эхэлнэ)
+  photo: "/teacher.jpg",
   codeLine: 'print("Хамгийн хамгийн SUPER багш!")',
   from: "Таны хайртай шавь нараас",
   message:

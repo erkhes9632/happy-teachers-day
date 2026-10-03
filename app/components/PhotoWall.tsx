@@ -1,8 +1,8 @@
 import { photos } from "../data/photos";
 import PhotoFrame from "./PhotoFrame";
 import Reveal from "./Reveal";
+import SideDecor from "./SideDecor";
 
-// Зураг бүрийн байрлал: зүүн, баруун, голд нь том, хазайлт нь янз бүр
 const spots = [
   { place: "md:justify-self-end", w: "md:w-[84%]", tilt: "-rotate-3" },
   {
@@ -40,7 +40,19 @@ const spots = [
   },
 ];
 
+function trail(n: number) {
+  let d = "M50 0";
+  for (let k = 1; k <= n; k++) {
+    const y = (1000 * k) / n;
+    const cx = k % 2 ? 92 : 8;
+    d += ` Q${cx} ${y - 500 / n} 50 ${y}`;
+  }
+  return d;
+}
+
 export default function PhotoWall() {
+  const path = trail(Math.max(4, Math.ceil(photos.length / 2)));
+
   return (
     <div className="relative mx-auto max-w-6xl">
       <header className="relative z-10 mb-20 text-center">
@@ -53,7 +65,6 @@ export default function PhotoWall() {
       </header>
 
       <div className="relative">
-        {/* Голд нь гүйх цэгэн зам */}
         <svg
           aria-hidden
           viewBox="0 0 100 1000"
@@ -61,7 +72,7 @@ export default function PhotoWall() {
           className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-24 -translate-x-1/2 md:block"
         >
           <path
-            d="M50 0 C90 150 10 300 50 450 S90 750 50 1000"
+            d={path}
             fill="none"
             stroke="#b98a55"
             strokeWidth="2.5"
@@ -72,43 +83,7 @@ export default function PhotoWall() {
           />
         </svg>
 
-        {/* Наалттай цаас, од, зүрх */}
-        <div
-          aria-hidden
-          className="absolute top-[20%] left-1/2 z-20 hidden w-44 -translate-x-1/2 rotate-3 bg-yellow-200 p-4 font-hand text-2xl leading-tight text-yellow-950 shadow-lg md:block"
-        >
-          Баярлалаа, багшаа!
-        </div>
-        <div
-          aria-hidden
-          className="absolute top-[63%] left-1/2 z-20 hidden w-44 -translate-x-1/2 -rotate-2 bg-pink-200 p-4 font-hand text-2xl leading-tight text-rose-950 shadow-lg md:block"
-        >
-          12Б, хамтдаа ❤️
-        </div>
-        <span
-          aria-hidden
-          className="absolute top-[6%] left-[4%] hidden rotate-12 text-5xl text-amber-400 md:block"
-        >
-          ★
-        </span>
-        <span
-          aria-hidden
-          className="absolute top-[38%] right-[3%] hidden -rotate-12 text-5xl text-rose-400 md:block"
-        >
-          ♥
-        </span>
-        <span
-          aria-hidden
-          className="absolute top-[52%] left-[3%] hidden rotate-6 text-4xl text-teal-500 md:block"
-        >
-          ✦
-        </span>
-        <span
-          aria-hidden
-          className="absolute top-[80%] right-[5%] hidden rotate-12 text-5xl text-amber-400 md:block"
-        >
-          ★
-        </span>
+        <SideDecor count={photos.length} />
 
         <div className="relative z-10 grid grid-cols-1 items-start gap-x-20 gap-y-16 md:grid-cols-2 md:gap-y-28">
           {photos.map((p, i) => {

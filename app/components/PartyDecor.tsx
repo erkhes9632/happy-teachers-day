@@ -1,4 +1,3 @@
-// Баярын чимэглэл: туг, үүл, бөмбөлөг (бүгд SVG, ямар ч зураг хэрэггүй)
 const FLAGS = [
   "#ff7aa8",
   "#ffd166",
@@ -13,7 +12,7 @@ function Bunting() {
     const x = 30 + i * 57;
     const seg = Math.floor(x / 400);
     const t = (x - seg * 400) / 400;
-    const y = 10 + 200 * t * (1 - t); // утас доош унжсан муруй
+    const y = 10 + 200 * t * (1 - t);
     const slope = (200 * (1 - 2 * t)) / 400;
     const angle = (Math.atan(slope) * 180) / Math.PI;
     return { x, y, angle, color: FLAGS[i % FLAGS.length] };
@@ -168,7 +167,6 @@ export default function PartyDecor() {
       aria-hidden
       className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
     >
-      {/* нарны гэрэл */}
       <div className="absolute -top-24 right-[8%] size-80 rounded-full bg-[radial-gradient(circle,#fff6c9,transparent_65%)]" />
       <Cloud className="top-[18%] -left-10" w={220} delay={0} />
       <Cloud className="top-[34%] right-[6%]" w={170} delay={-12} />

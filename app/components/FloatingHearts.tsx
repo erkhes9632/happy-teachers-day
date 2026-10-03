@@ -17,7 +17,6 @@ type Particle = {
 export default function FloatingHearts({ count = 10 }: { count?: number }) {
   const [items, setItems] = useState<Particle[]>([]);
 
-  // Random утгыг зөвхөн browser дээр үүсгэнэ (hydration алдаанаас сэргийлнэ)
   useEffect(() => {
     setItems(
       Array.from({ length: count }, (_, i) => ({

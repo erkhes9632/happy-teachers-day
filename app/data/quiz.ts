@@ -2,9 +2,6 @@ import { site } from "./site";
 
 export type Teacher = { id: string; name: string };
 
-/* ⚠️ ЗАСНА: "class-teacher"-ээс бусад 3 нэрийг өөрийн сургуулийн багш нарын нэрээр солино.
-   Зөв хариулт (ангийн багш) нь site.ts доторх teacherName-ээс автоматаар авна.
-   Дарааллыг хүссэнээрээ солиж болно. */
 const teachers: Teacher[] = [
   { id: "t-1", name: "Нурзат" },
   { id: "class-teacher", name: site.teacherName },
@@ -18,7 +15,6 @@ export const quiz = {
   correctId: "class-teacher",
   teachers,
 
-  // Буруу сонгох бүрт дараалан гарна (сүүлийнх нь давтагдана)
   hints: [
     "Тэр бол манай ангийн багш шүү 😉",
     "12Б ангийг нэг жижигхэн гэр бүл болгосон хүн л дээ.",

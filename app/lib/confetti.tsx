@@ -1,4 +1,3 @@
-// Ямар ч сан суулгахгүй, canvas дээр зурдаг confetti.
 type Origin = { x: number; y: number };
 
 const COLORS = [

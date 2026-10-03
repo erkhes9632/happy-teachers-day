@@ -58,11 +58,9 @@ export default function Cake() {
             </radialGradient>
           </defs>
 
-          {/* тавиур */}
           <ellipse cx="130" cy="234" rx="122" ry="15" fill="#f1d3dc" />
           <ellipse cx="130" cy="230" rx="114" ry="12" fill="#fff" />
 
-          {/* доод давхар */}
           <rect x="34" y="158" width="192" height="72" rx="16" fill="#ffb8cf" />
           <path
             d="M34 176 q12 14 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 t24 0 V158 H34Z"
@@ -72,7 +70,6 @@ export default function Cake() {
             <circle key={`${x}-${y}`} cx={x} cy={y} r="3" fill={c} />
           ))}
 
-          {/* дунд давхар */}
           <rect x="62" y="104" width="136" height="58" rx="14" fill="#fff0c2" />
           <path
             d="M62 120 q11.3 12 22.7 0 t22.7 0 t22.7 0 t22.7 0 t22.7 0 t22.7 0 V104 H62Z"
@@ -89,14 +86,12 @@ export default function Cake() {
             12Б
           </text>
 
-          {/* дээд давхар */}
           <rect x="90" y="64" width="80" height="44" rx="12" fill="#d9c9ff" />
           <path
             d="M90 78 q10 10 20 0 t20 0 t20 0 t20 0 V64 H90Z"
             fill="#f5efff"
           />
 
-          {/* лаанууд */}
           {candles.map((c, i) => (
             <g key={c.x}>
               <rect
@@ -157,7 +152,9 @@ export default function Cake() {
       </button>
 
       <p className="mt-3 font-hand text-2xl text-[#5a3a86]">
-        {lit ? "Лаагаа үлээгээд хүслээ шүү" : "Хүсэл чинь биелэх болтугай ✨"}
+        {lit
+          ? "Хүслээ бодоод лаагаа үлээгээрэй"
+          : "Хүсэл тань биелэх болтугай ✨"}
       </p>
     </div>
   );

@@ -25,7 +25,6 @@ export default function TypeWriter({
     return () => clearTimeout(timer);
   }, [text, speed, startDelay]);
 
-  // Бүтэн текстийг үл үзэгдэх байдлаар байрлуулж, өргөнийг нь нөөцөлнэ (layout үсрэхгүй)
   return (
     <span className="relative inline-block whitespace-pre">
       <span className="invisible">{text}</span>

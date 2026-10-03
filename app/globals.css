@@ -405,3 +405,167 @@ body::before {
     display: none;
   }
 }
+
+/* =====================================================
+   Scrapbook-ийн хажуугийн чимэглэл
+   ===================================================== */
+/* Наалтыг цагаан хүрээтэй "хайчилсан" мэт харагдуулна */
+.sticker {
+  filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+    drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)
+    drop-shadow(0 5px 6px rgba(80, 50, 20, 0.25));
+}
+
+/* Гэрлэн гархи: нэг босоо утас + давтагдах 5 өнгийн чийдэн */
+.lights {
+  background-image:
+    linear-gradient(#a98458, #a98458),
+    radial-gradient(circle at 50% 32px, #ff7aa8 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 96px, #ffd166 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 160px, #5ee0c4 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 224px, #b39bff 0 5px, transparent 6px),
+    radial-gradient(circle at 50% 288px, #ff9a62 0 5px, transparent 6px);
+  background-size:
+    1.5px 100%,
+    100% 320px,
+    100% 320px,
+    100% 320px,
+    100% 320px,
+    100% 320px;
+  background-position:
+    50% 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  background-repeat:
+    no-repeat, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y;
+}
+.lights-glow {
+  background-image:
+    radial-gradient(
+      circle at 50% 32px,
+      rgba(255, 122, 168, 0.8) 0,
+      transparent 22px
+    ),
+    radial-gradient(
+      circle at 50% 96px,
+      rgba(255, 209, 102, 0.8) 0,
+      transparent 22px
+    ),
+    radial-gradient(
+      circle at 50% 160px,
+      rgba(94, 224, 196, 0.8) 0,
+      transparent 22px
+    ),
+    radial-gradient(
+      circle at 50% 224px,
+      rgba(179, 155, 255, 0.8) 0,
+      transparent 22px
+    ),
+    radial-gradient(
+      circle at 50% 288px,
+      rgba(255, 154, 98, 0.8) 0,
+      transparent 22px
+    );
+  background-size: 100% 320px;
+  background-repeat: repeat-y;
+  filter: blur(4px);
+  animation: kf-twinkle 2.6s ease-in-out infinite alternate;
+}
+
+/* =====================================================
+   Дууны товчны equalizer
+   ===================================================== */
+@keyframes kf-eq {
+  from {
+    transform: scaleY(0.25);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.eq {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+  color: #ec4899;
+}
+.eq > span {
+  width: 3px;
+  height: 100%;
+  border-radius: 2px;
+  background: currentColor;
+  transform-origin: bottom;
+  animation: kf-eq 0.9s ease-in-out infinite alternate;
+}
+.eq > span:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.eq > span:nth-child(3) {
+  animation-delay: -0.6s;
+}
+.eq > span:nth-child(4) {
+  animation-delay: -0.15s;
+}
+
+/* =====================================================
+   Нүүр хуудас: дэвсгэр, тууз, унжсан чимэглэл, цэцэг
+   ===================================================== */
+.home-bg {
+  background:
+    radial-gradient(
+      60rem 40rem at 50% 38%,
+      rgba(255, 255, 255, 0.9),
+      transparent 70%
+    ),
+    radial-gradient(rgba(244, 114, 182, 0.2) 1.6px, transparent 1.8px) 0 0 /
+      30px 30px,
+    linear-gradient(135deg, #ffe9f1 0%, #fff2dd 45%, #efe6ff 100%);
+}
+
+/* Хоёр үзүүр нь хөндлөн зүссэн тууз */
+.ribbon {
+  background: linear-gradient(90deg, #f472b6, #c084fc);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    calc(100% - 18px) 50%,
+    100% 100%,
+    0 100%,
+    18px 50%
+  );
+}
+
+.wreath-spin {
+  animation: kf-spin 140s linear infinite;
+}
+
+@keyframes kf-swing {
+  from {
+    transform: rotate(-7deg);
+  }
+  to {
+    transform: rotate(7deg);
+  }
+}
+.swing {
+  transform-origin: 50% 0;
+  animation: kf-swing 5s ease-in-out infinite alternate;
+}
+
+@keyframes kf-plant {
+  from {
+    transform: rotate(-2.5deg);
+  }
+  to {
+    transform: rotate(2.5deg);
+  }
+}
+.plant {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: kf-plant 5s ease-in-out infinite alternate;
+}

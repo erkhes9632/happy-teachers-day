@@ -31,7 +31,6 @@ function Wave({ fill }: { fill: string }) {
 export default function LettersPage() {
   return (
     <main className="overflow-x-clip">
-      {/* 1. Баярын тэнгэр: торт, мэндчилгээ */}
       <section className="sky relative flex min-h-screen flex-col items-center justify-center px-4 pt-32 pb-36 text-center">
         <PartyDecor />
         <FallingLayer variant="snow" count={60} />
@@ -80,14 +79,12 @@ export default function LettersPage() {
         <Wave fill="#f3e3c7" />
       </section>
 
-      {/* 2. Kraft цаасан scrapbook: ангийн зургууд */}
       <section className="kraft relative px-4 pt-20 pb-44 sm:px-8">
         <FallingLayer variant="gold" count={44} />
         <PhotoWall />
         <Wave fill="#f6dde2" />
       </section>
 
-      {/* 3. Сарнай өнгийн ширээн дээрх захидал */}
       <section className="rose-desk relative px-4 pt-20 pb-28 sm:px-8">
         <div
           aria-hidden

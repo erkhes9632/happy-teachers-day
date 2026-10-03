@@ -105,7 +105,6 @@ function Shape({ variant, p }: { variant: Variant; p: P }) {
     );
   }
 
-  // petals
   if (p.kind < 0.65) {
     return (
       <span
@@ -144,8 +143,6 @@ function Shape({ variant, p }: { variant: Variant; p: P }) {
   );
 }
 
-/* Section бүрийн дотор байрлаж, тухайн section-ийг гүйлгэж байх хугацаанд л харагдана.
-   (sticky + overflow-clip: fixed шиг ажиллана, гэхдээ section-ийн хүрээнээс гарахгүй) */
 export default function FallingLayer({
   variant,
   count = 36,
@@ -155,7 +152,6 @@ export default function FallingLayer({
 }) {
   const [items, setItems] = useState<P[]>([]);
 
-  // Random утгыг зөвхөн browser дээр үүсгэнэ (hydration алдаанаас сэргийлнэ)
   useEffect(() => {
     const c = CONFIG[variant];
     setItems(

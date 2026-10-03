@@ -33,7 +33,6 @@ function Img({
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       ref={ref}
       src={src}

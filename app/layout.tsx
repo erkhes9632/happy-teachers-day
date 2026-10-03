@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Caveat, Lora, Nunito } from "next/font/google";
 import "./globals.css";
+import MusicPlayer from "./components/MusicPlayer";
 
 const nunito = Nunito({
   subsets: ["latin", "cyrillic", "cyrillic-ext"],
@@ -23,6 +24,7 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: "Багш нарын баярын мэнд! 💖",
+  description: "Багш танд зориулсан шавь нарын чин сэтгэлийн захидлууд.",
 };
 
 export const viewport: Viewport = {
@@ -38,6 +40,7 @@ export default function RootLayout({
         className={`${nunito.variable} ${lora.variable} ${caveat.variable} font-sans antialiased`}
       >
         {children}
+        <MusicPlayer />
       </body>
     </html>
   );
